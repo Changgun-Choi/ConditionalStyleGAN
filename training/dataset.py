@@ -10,9 +10,12 @@
 import os
 import glob
 import numpy as np
-import tensorflow as tf
+#import tensorflow as tf
 import dnnlib
 import dnnlib.tflib as tflib
+
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 
 #----------------------------------------------------------------------------
 # Parse individual image from a tfrecords file.
@@ -46,7 +49,7 @@ class TFRecordDataset:
         buffer_mb       = 256,      # Read buffer size (megabytes).
         num_threads     = 2):       # Number of concurrent threads.
 
-        self.tfrecord_dir       = 'dataset/logos'
+        self.tfrecord_dir       = 'C:/Users/ChangGun Choi/Team Project/StyleGAN Logo/ConditionalStyleGAN/dataset/logo'
         self.resolution         = None
         self.resolution_log2    = None
         self.shape              = []        # [channel, height, width]
@@ -74,10 +77,10 @@ class TFRecordDataset:
         assert os.path.isdir(self.tfrecord_dir)
         tfr_files = sorted(glob.glob(os.path.join(self.tfrecord_dir, '*.tfrecords')))
         assert len(tfr_files) >= 1
-        tfr_shapes = []
+        tfr_shapes = []   
         for tfr_file in tfr_files:
-            tfr_opt = tf.python_io.TFRecordOptions(tf.python_io.TFRecordCompressionType.NONE)
-            for record in tf.python_io.tf_record_iterator(tfr_file, tfr_opt):
+            tfr_opt = tf.io.TFRecordOptions(compression_type=None)
+            for record in tf.compat.v1.io.tf_record_iterator(tfr_file, tfr_opt):
                 tfr_shapes.append(parse_tfrecord_np(record).shape)
                 break
 
