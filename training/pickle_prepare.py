@@ -24,8 +24,11 @@ list_of_file_paths = labels['Name'].values.tolist()
 class_condition_labels = labels['tf_cluster'].values.tolist()
 
 mypickle = {"Filenames": list_of_file_paths, "Labels": class_condition_labels}
-# Pickle path = '../data/mypickle.pickle'
-with open('C:/Users/ChangGun Choi/Team Project/StyleGAN Logo/ConditionalStyleGAN/data/mypickle.pickle', 'wb') as handle:
+# Pickle path = '../data/mypickle.pickle'  /content/ConditionalStyleGAN/data/mypickle.pickle
+#with open('C:/Users/ChangGun Choi/Team Project/StyleGAN Logo/ConditionalStyleGAN/data/mypickle.pickle', 'wb') as handle:
+with open('/content/ConditionalStyleGAN/data/mypickle.pickle', 'wb') as handle:
+  
+    
     pickle.dump(mypickle, handle, protocol=pickle.HIGHEST_PROTOCOL)
     
 # The script is run from the terminal and 
