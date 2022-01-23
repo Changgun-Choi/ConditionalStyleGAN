@@ -6,6 +6,10 @@
 # Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 """Main entry point for training StyleGAN and ProGAN networks."""
+#python3
+import tensorflow as tf
+tf.__version__
+#%%
 
 import copy
 import dnnlib

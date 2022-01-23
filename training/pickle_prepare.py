@@ -11,7 +11,8 @@ import pandas as pd
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import LabelEncoder
 
-label_path= "C:/Users/ChangGun Choi/Team Project/TeamProject/SVG_Logo/Model/Label/LLD_majorityVote.csv"
+#label_path= "C:/Users/ChangGun Choi/Team Project/TeamProject/SVG_Logo/Model/Label/LLD_majorityVote.csv"
+label_path= "/content/ConditionalStyleGAN/data/LLD_majorityVote.csv"
 
 labels = pd.read_csv(label_path, sep=',')
 encoder = LabelEncoder()
