@@ -13,8 +13,8 @@ import re
 import uuid
 import sys
 import numpy as np
-import tensorflow as tf
-
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 from collections import OrderedDict
 from typing import Any, List, Tuple, Union
 
@@ -148,7 +148,7 @@ class Network:
 
         # Build template graph.
         with tfutil.absolute_variable_scope(self.scope, reuse=tf.compat.v1.AUTO_REUSE), tfutil.absolute_name_scope(self.scope):  # ignore surrounding scopes
-            assert tf.get_variable_scope().name == self.scope
+            assert tf.compat.v1.get_variable_scope().name == self.scope
             assert tf.get_default_graph().get_name_scope() == self.scope
             with tf.control_dependencies(None):  # ignore surrounding control dependencies
                 self.input_templates = [tf.placeholder(tf.float32, name=name) for name in self.input_names]
