@@ -48,8 +48,10 @@ class TFRecordDataset:
         prefetch_mb     = 2048,     # Amount of data to prefetch (megabytes), 0 = disable prefetching.
         buffer_mb       = 256,      # Read buffer size (megabytes).
         num_threads     = 2):       # Number of concurrent threads.
+        #self.tfrecord_dir       = 'C:/Users/ChangGun Choi/Team Project/StyleGAN Logo/ConditionalStyleGAN/dataset/logo'
+        self.tfrecord_dir       = "/content/ConditionalStyleGAN/dataset/logo"
 
-        self.tfrecord_dir       = 'C:/Users/ChangGun Choi/Team Project/StyleGAN Logo/ConditionalStyleGAN/dataset/logo'
+
         self.resolution         = None
         self.resolution_log2    = None
         self.shape              = []        # [channel, height, width]
