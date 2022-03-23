@@ -60,7 +60,9 @@ Secondly, the WGAN-GP takes on a conditional format:
 for which the paper can be found [here](https://arxiv.org/abs/1704.00028)
 
 # Proposed Data: BoostedLLD
-For this paper we removed all text-based images from the [LLD-logo dataset](https://data.vision.ee.ethz.ch/sagea/lld/#paper) and extended the remaining logos with image based logos and illustrations scraped off of Google images.
+We use Boosted [LLD-logo dataset](https://data.vision.ee.ethz.ch/sagea/lld/#paper) from ConditionalStyleGAN github repository5 which removed
+all text-based images and extended the remaining logos with image based logos and illustrations
+scraped off of Google images.
 
 ![](assets/readme-a1b254d0.png)
 
